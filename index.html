@@ -1,7 +1,27 @@
-<button onclick="sendMail()">Email Someone</button>
-<script>
-function sendMail()
-    {
-        window.open('mailto:youdecide@poop.com');
-    }
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+function savePost() {
+var editElem = document.getElementById("edit");
+var userVersion = editElem.innerHTML;
+localStorage.userEdits = userVersion;
+document.getElementById("update").innerHTML="POSTED";
+
+}
+function checkPosts() {
+
+if(localStorage.userEdits!=null)
+document.getElementById("edit").innerHTML = localStorage.userEdits;
+}
 </script>
+</head>
+<body onload="checkPosts()">
+<div id="edit" contenteditable="true">
+O_O
+</div>
+<title>TSBDLife2</title>
+<input type="button" value="Post" onclick="savePost()"/>
+<div id="update"> - To post, click "POST".</div>
+</body>
+</html>
