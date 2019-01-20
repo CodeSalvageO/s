@@ -18,5 +18,16 @@
       </tr>
     </table>
     <input id=btnAddPost type=button value="Post" onclick="addPost()">
+<script>
+var docBook;
+  
+function initializeWorld()
+{
+   docBook = document.all("docBook").XMLDocument;
+   docBook.async = false;
+   renderElements();
+}
+  
+    
     
   
